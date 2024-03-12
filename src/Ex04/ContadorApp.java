@@ -5,8 +5,8 @@ public class ContadorApp {
 	public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ContadorThread contadorThread1 = new ContadorThread(1);
-        ContadorThread contadorThread2 = new ContadorThread(2);
+        ContadorThread contadorThread1 = new ContadorThread(1,"1");
+        ContadorThread contadorThread2 = new ContadorThread(2, "2");
 
         System.out.println("Bem-vindo ao aplicativo do contador.");
         System.out.println("Digite 'start1' para iniciar o Contador 1.");
