@@ -21,8 +21,8 @@ public class Semaforo implements Runnable {
     }
     
     public void aguardar() throws InterruptedException {
-        while (!this.aberto) {
-            this.wait();
+        while (this.aberto) {
+            wait();
         }
     }
     
@@ -42,10 +42,8 @@ public class Semaforo implements Runnable {
 		try {
 	        while (true) {
 	        	
-	        	if (!this.aberto) {
-	        		abrir();
-	        		
-	        	}
+	        	abrir();
+	        	aguardar();
 	            System.out.println("Semaforo " + this.numSemaforo + " está: " + getStatus());
 	            Thread.sleep(2000);
 	            fechar();
